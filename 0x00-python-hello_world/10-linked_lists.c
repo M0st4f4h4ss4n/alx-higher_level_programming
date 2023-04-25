@@ -33,7 +33,7 @@ size_t print_listint(const listint_t *h)
 listint_t *add_nodeint(listint_t **head, const int n)
 {
 	listint_t *new;
-
+	
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
@@ -46,8 +46,8 @@ listint_t *add_nodeint(listint_t **head, const int n)
 }
 
 /**
- * free_listint - frees a listint_t list
- * @head: pointer to list to be freed
+ * free_listint -frees a listint_t list
+ * @head: pointer to the listint_t to be freed
  * Return: void
  */
 void free_listint(listint_t *head)

@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Defines a text-indentation function."""
+"""Defines a text-indentation function.
+"""
 
 
 def text_indentation(text):
@@ -26,4 +27,5 @@ def text_indentation(text):
             while c < len(text) and text[c] == ' ':
                 c += 1
             continue
+
         c += 1

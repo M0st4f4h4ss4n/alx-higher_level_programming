@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class."""
+"""Class Rectangle defines a rectangle
+"""
 
 
 class Rectangle:
-    """Represent a rectangle."""
-    pass
+    """defines a rectangle
+    """

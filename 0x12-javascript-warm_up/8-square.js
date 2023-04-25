@@ -1,11 +1,18 @@
 #!/usr/bin/node
-const size = Math.floor(Number(process.argv[2]));
-if (isNaN(size)) {
+// script that prints a square
+const arg = Math.floor(Number(process.argv[2]));
+if (isNaN(arg)) {
   console.log('Missing size');
 } else {
-  for (let r = 0; r < size; r++) {
-    let row = '';
-    for (let c = 0; c < size; c++) row += 'X';
-    console.log(row);
+  loop(arg);
+}
+
+function loop (counter) {
+  for (let row = 0; row < counter; row++) {
+    let X = '';
+    for (let col = 0; col < counter; col++) {
+      X += 'X';
+    }
+    console.log(X);
   }
 }
