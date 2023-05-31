@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>ALX-Holberton Programming Assignments</title>
-</head>
 <body style="background-color: #1a1a1a; color: #fff; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; margin: 0; padding: 0;">
     <h1 style="font-size: 48px; text-align: center; color: #00bfff; margin-top: 50px; margin-bottom: 20px;">🚀 ALX-Holberton Programming Assignments 🚀</h1>
     <p style="margin-bottom: 20px;">Welcome to my repository for ALX-Holberton assignments. This repo is a collection of high-level programming projects I've been working on during my training. Here, you'll find projects in Python, JavaScript, and C.</p>
