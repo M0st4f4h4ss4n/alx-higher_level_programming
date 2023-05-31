@@ -1,57 +1,24 @@
-# 0x14. Javascript - Web scraping
+![img](https://assets.imaginablefutures.com/media/images/ALX_Logo.max-200x150.png)
+ > Javascript Web scrapping
 
-`Scripting`  `API`  `JavaScript`
+![scrap-it-she-did-nothing](https://media4.giphy.com/media/l0MYM2drW6XPoZnI4/200w.webp?cid=ecf05e477wdbkvriq11rkoyan86fgqica1bovfag5o8a933v&ep=v1_gifs_search&rid=200w.webp&ct=g)
 
+## About
+Web scraping with JavaScript is a technique that involves writing code in JavaScript to extract data from websites. Let's use ```request``` library to make API calls. 
 
 ## Resources
-#### Read or watch:
+1. [Working with JSON data](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
+2. [The workflow of accessing the attributes of a simply-created JSON object by Jimmy Tran from Cohort 1 - San Francisco](https://medium.com/@vietkieutie/the-workflow-of-accessing-the-attributes-of-a-simply-created-json-object-82a5b33e2319)
+3. [Requests module](https://github.com/request/request)
+4. [Modern JS](https://github.com/mbeaudru/modern-js-cheatsheet)
 
-- [Working with JSON data](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
-- [The workflow of accessing the attributes of a simply-created JSON object by Jimmy Tran from Cohort 1 - San Francisco](https://medium.com/@vietkieutie/the-workflow-of-accessing-the-attributes-of-a-simply-created-json-object-82a5b33e2319)
-- [request module](https://github.com/request/request)
-- [Mordern JS](https://github.com/mbeaudru/modern-js-cheatsheet)
-
-## Learning Objectives
-At the end of this project, you are expected to be able to [explain to anyone](https://fs.blog/feynman-learning-technique/), **without the help of Google**:
+## Learning objectives
+At the end of this project, you are expected to  be able to [explain to anyone](https://fs.blog/feynman-learning-technique/) __without the help of Google__:
 
 ### General
-* Why javascript programming is amazing
-* How to manipulate JSON data
-* How to `request` and fetch API
-* How to read and write a file using `fs` module
 
-## Requirements
-### General
-- Allowed editors `vi`, `vim`, `emacs`
-- All your files should end with a new line
-- The first line of all your files should be exactly `#!/usr/bin/node`
-- A `README.md` file, at the root of the folder of the project, is mandatory
-- Your code should be `semistandard` compliant. [Rules of Standard](https://standardjs.com/rules.html) + [semicolons on top](https://github.com/standard/semistandard). Also as reference: [AirBnB style](https://github.com/airbnb/javascript)
-- All your files must be executable
-- The length of your files will be tested using `wc`
-- You are not allowed to use `var`
+* [X] Why JavaScript programming is amazing :exploding_head: :partying_face:
+* [X] How to manipulate JSON data
+* [X] How to use ```request``` and fetch API
+* [X] How to read and write a file using ```fs``` module
 
-## More Info
-### Install Node 10
-
-~~~
-$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-$ sudo apt-get install -y nodejs
-~~~
-
-### Install semi-standard
-[Documentation](https://github.com/standard/semistandard)
-
-~~~
-$ sudo npm install semistandard --global
-~~~
-
-### Install `request` module and use it
-[Documentation](https://github.com/request/request)
-
-~~~
-$ sudo npm install request --global
-$ export NODE_PATH=/usr/lib/node_modules
-~~~
-
-**Notes:** Request module has been deprecated since February 2022 - the team is considering alternative to replace this module - however, it's a really simple and powerful module for practicing web-scrapping in JavaScript (and still used alot in the industry).

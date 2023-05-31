@@ -1,13 +1,9 @@
 #!/usr/bin/node
-// Script that prints 3 lines.
-const lines = [
-  'C is fun',
-  'Python is cool',
-  'JavaScript is amazing'
-];
 
-lines.forEach(print);
+const cString = 'C is fun';
+const pyString = 'Python is cool';
+const jsString = 'JavaScript is amazing';
 
-function print (line) {
-  console.log(line);
-}
+console.log(cString);
+console.log(pyString);
+console.log(jsString);

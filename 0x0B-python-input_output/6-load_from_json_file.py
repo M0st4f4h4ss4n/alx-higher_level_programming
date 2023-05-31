@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-"""Contains a function that creates a python obj from Json file
-"""
+
+"""Deserialize an JSON from a file"""
+
+
+import json
 
 
 def load_from_json_file(filename):
-    """Creates a Python obj from JSON file
+    """Create an object from JSON
     Args:
-        filename: file
-
-    Returns:
-        Python Obj created
+        filename(str) -> The filename holding JSON
     """
-    import json
-
-    with open(filename, "r", encoding="utf-8") as f:
-        return json.load(f)
+    if filename:
+        with open(filename, 'r', encoding="utf-8") as f:
+            return json.load(f)

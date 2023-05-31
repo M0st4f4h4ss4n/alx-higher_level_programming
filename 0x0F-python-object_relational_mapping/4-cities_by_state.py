@@ -1,33 +1,36 @@
 #!/usr/bin/python3
-"""
-Script that lists all cities from the database hbtn_0e_4_usa.
 
-Usage: ./4-cities_by_state.py <mysql username> <mysql password> <database name>
 """
-import MySQLdb
+Lists all cities from the cities table of database hbtn_0e_0_usa.
+Usage: ./0-select_states.py <username> \
+                            <password> \
+                            <database-name>
+"""
 import sys
+import MySQLdb as db
 
-if len(sys.argv) == 4:
-    conn = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3],
-        charset="utf8"
-    )
-    cur = conn.cursor()
-    cur.execute("SELECT c.id, c.name, s.name \
-            FROM cities as c \
-            INNER JOIN states as s \
-            ON `c`.`state_id` = s.id \
-            ORDER BY c.id")
-    query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
-    cur.close()
-    conn.close()
 
-else:
-    print("Usage ./4-cities_by_state.py <mysql username> \
-<mysql password> <database name>")
+def connect_and_query() -> None:
+
+    """Connect to the database and execute query"""
+    try:
+        cnx = db.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+        cursor = cnx.cursor(cursorclass=db.cursors.Cursor)
+        cursor.execute('SELECT city.id, city.name, state.name\
+                        FROM cities as city\
+                        INNER JOIN states as state\
+                        ON city.state_id = state.id\
+                        ORDER BY city.id ASC;')
+        cities = cursor.fetchall()
+
+        for city in cities:
+            print(city)
+
+        cursor.close()
+        cnx.close()
+    except Exception as e:
+        return (e)
+
+
+if __name__ == "__main__":
+    connect_and_query()

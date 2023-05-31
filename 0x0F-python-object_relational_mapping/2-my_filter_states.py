@@ -1,38 +1,31 @@
 #!/usr/bin/python3
-"""
-script that takes in an argument \
-and displays all values in the states table of hbtn_0e_0_usa \
-where name matches the argument.
 
-Usage: ./2-my_filter_states.py <mysql username> \
-<mysql password <database name> <argument>
 """
-import MySQLdb
+Lists all states from the states table of database hbtn_0e_0_usa.
+Usage: ./0-select_states.py <username> \
+                            <password> \
+                             <database-name>
+"""
 import sys
+import MySQLdb as db
 
 
-# Test the no. of commandline arguements passed
-if len(sys.argv) == 5:
-    # Connect to MySQL
-    conn = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3],
-        charset="utf8"
-    )
+def connect_and_query() -> None:
 
-    cur = conn.cursor()
-    # Grab all values in the states table.
-    cur.execute("SELECT * FROM states WHERE name='{}' ORDER BY id"
-                .format(sys.argv[4]))
-    query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
-    cur.close()
-    conn.close()
+    """Connect to the database and execute query"""
+    try:
+        cnx = db.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+        cursor = cnx.cursor(cursorclass=db.cursors.Cursor)
+        cursor.execute("SELECT * FROM states WHERE name = '{:s}' \
+                        ORDER BY id ASC;".format(sys.argv[4]))
+        states = cursor.fetchall()
 
-else:
-    print("Usage: ./2-my_filter_states.py \
-<mysql username> <mysql password <database name>")
+        for state in states:
+            if state[1] == sys.argv[4]:
+                print(state)
+    except Exception as e:
+        return (e)
+
+
+if __name__ == "__main__":
+    connect_and_query()

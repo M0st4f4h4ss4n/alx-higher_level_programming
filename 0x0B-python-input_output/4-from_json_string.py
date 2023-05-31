@@ -1,15 +1,17 @@
 #!/usr/bin/python3
-""" Contains a function that returns python DSA from JSON string
-"""
+
+"""Function to unserialize a JSON string to python object"""
+
+
+import json
 
 
 def from_json_string(my_str):
-    """Returns python DSA from JSON string
+    """Unserialize <my_str>
     Args:
-        my_str: json string representation
-
+        my_str(str) -> JSON string to unserialize
     Returns:
-        Python object
+        unserialized object repesentation of my_str
     """
-    import json
-    return (json.loads(my_str))
+    if my_str:
+        return json.loads(my_str)

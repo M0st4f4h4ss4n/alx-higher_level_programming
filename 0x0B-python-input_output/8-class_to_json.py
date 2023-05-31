@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""8-class_to_json.py - class_to_join
-"""
+
+"""class to JSON function."""
 
 
 def class_to_json(obj):
-    """returns the dictionary description with simple DSA
-    (list, dictionary, string, integer and boolean)
-    for JSON serialization of an object
-    """
+    """Return the dictionary representation <obj>'s class
+    Args:
+        obj(object) -> Any object
+    Returns:
+        obj.__dict__."""
     return obj.__dict__

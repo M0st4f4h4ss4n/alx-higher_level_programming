@@ -1,15 +1,18 @@
 #!/usr/bin/node
-/**
- * class Square - defines a square.
- */
-class Square extends require('./5-square.js') {
+const ParentSquare = require('./5-square');
+
+module.exports = class Square extends ParentSquare {
+//   constructor (size) {
+//     super(size, size);
+//   }
+
   charPrint (c) {
-    if (c === undefined) {
-      this.print();
+    if (c !== undefined) {
+      for (let i = 0; i < this.width; i++) {
+        console.log(String(c).repeat(this.width));
+      }
     } else {
-      for (let i = 0; i < this.height; i++) console.log(c.repeat(this.width));
+      this.print();
     }
   }
-}
-
-module.exports = Square;
+};

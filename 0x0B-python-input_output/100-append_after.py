@@ -1,22 +1,20 @@
 #!/usr/bin/python3
-"""
-Module 100-append_after
-Contains function that appends str after lines that include keyword
-"""
+
+"""Insert a string of text, after each line matching the search term"""
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """appends str after lines that include keyword (search_string)
-    1. recreate content in new_text by copying lines over
-    2. append new_string after lines if needed
-    3. overwrite file from beginning
+    """Insert <new_string> after everly line that has <search_string>
+    Args:
+        filename(str) -> Name of the file
+        search_string(str) -> string to match
+        new_string(str) -> string to append
     """
-
-    with open(filename, mode="r+", encoding="utf-8") as f:
-        new_text = ""
-        for line in f:
-            new_text += line
+    text_string = ""
+    with open(filename) as f_read:
+        for line in f_read:
+            text_string += line
             if search_string in line:
-                new_text += new_string
-        f.seek(0)
-        f.write(new_text)
+                text_string += new_string
+    with open(filename, "w") as f_write:
+        f_write.write(text_string)

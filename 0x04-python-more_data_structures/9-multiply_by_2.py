@@ -1,11 +1,4 @@
 #!/usr/bin/python3
 def multiply_by_2(a_dictionary):
-    """Returns a new value multiplied by 2
-
-    Args:
-        a_dictionary: dictionary
-
-    Returns:
-        integer.
-    """
-    return {key: num * 2 for key, num in a_dictionary.items()}
+    return ({key: (a_dictionary[key] * 2) for key in a_dictionary})
+# print(multiply_by_2({"John": 22, "Doe": 55}))

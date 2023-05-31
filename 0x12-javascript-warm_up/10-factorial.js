@@ -1,14 +1,16 @@
 #!/usr/bin/node
-// script that computes and prints a factorial
-const count = Number(process.argv[2]);
 
-function factorial (value) {
-  if (isNaN(value) || value === 0) {
+function factorial (number) {
+  if (number === 1) {
     return (1);
   } else {
-    return (value * factorial(value - 1));
+    return (number * factorial(number - 1));
   }
-  // return (isNaN(value) || value === 0 ? 1 : value * factorial(value - 1));
 }
 
-console.log(factorial(count));
+const value = process.argv[2];
+if (isNaN(value)) {
+  console.log('1');
+} else {
+  console.log(factorial(value));
+}

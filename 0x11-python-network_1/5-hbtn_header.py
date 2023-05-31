@@ -1,18 +1,27 @@
 #!/usr/bin/python3
-"""Displays the value of the variable X-Request-Id in the response header
 
-Usage:
-    ./5-hbtn_header.py <url>
 """
-import sys
-import requests
+send a GET request to a the url provided
+as an Argument to the script and print the
+X-Request-Id value of the header
+"""
+
+
+from requests import get
+from sys import argv
+
+
+def get_alx_intranet(url):
+    """
+    Send a GET request to the url
+    and print the X-Request-Id header value
+    """
+    if url:
+        try:
+            return get(url).headers.get('X-Request-Id')
+        except Exception as e:
+            return e
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: ./5-hbtn_header.py <url>")
-    else:
-        URL = sys.argv[1]
-
-        r = requests.get(URL)
-        print(r.headers.get("X-Request-Id"))
+    print(get_alx_intranet(argv[1]))

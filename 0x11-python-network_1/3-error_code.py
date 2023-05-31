@@ -1,24 +1,23 @@
 #!/usr/bin/python3
-""" Sends a request to a given URL and displays the response body.
+"""Send a request to the url and print the response"""
 
-Usage:
-    ./3-error_code.py <URL>
-    - Handles HTTP errors.
-"""
-import sys
-import urllib.request
-import urllib.error
+from urllib import request, error
+from sys import argv
+
+
+def request_header_property(url: str) -> str:
+    """
+    Send a request to the URL specified and
+    get the response and handle exceptions
+    Args:
+        url (str): The URL to query
+    """
+    try:
+        with request.urlopen(url) as response:
+            return response.read().decode('utf-8')
+    except error.HTTPError as e:
+        return "Error code: {}".format(e.code)
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: ./3-error_code.py <url>")
-    else:
-        URL = sys.argv[1]
-
-        req = urllib.request.Request(URL)
-        try:
-            with urllib.request.urlopen(req) as res:
-                print(res.read().decode("ascii"))
-        except urllib.error.HTTPError as e:
-            print("Error code: {}".format(e.code))
+    print(request_header_property(argv[1]))

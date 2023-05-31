@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    """removes all characters c and C from a string
-    """
-    string = [x for x in my_string if x != 'c' and x != 'C']
-    return ("".join(string))
+    new_string = "".join([char for char in my_string if char.upper() != "C"])
+    return (new_string)
+print(no_c("No more C. Come and Code along with me"))

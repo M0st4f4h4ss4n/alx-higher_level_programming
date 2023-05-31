@@ -1,10 +1,19 @@
 #!/usr/bin/python3
-""" Module 1-write_file
-Contains function that creates file and returns num chars written
-"""
+
+""" Function to write to a file"""
 
 
 def write_file(filename="", text=""):
-    """ writes to text file and returns the number of characters written """
-    with open(filename, mode="w", encoding="utf-8") as f:
-        return(f.write(text))
+    """Write <text> to <filename> overriding
+    Args:
+        filename(str) -> Name of the file to write to
+        text(str)     -> Content to write
+    Returns:
+        Number of characters written
+    """
+    if filename:
+        with open(filename, "w", encoding="utf-8") as file_to_write:
+            original_content = file_to_write.tell()
+            file_to_write.write(text)
+            new_content = file_to_write.tell()
+            return new_content - original_content

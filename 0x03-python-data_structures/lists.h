@@ -1,6 +1,6 @@
 #ifndef LISTS_H
 #define LISTS_H
-
+#include <stdio.h>
 #include <stddef.h>
 /**
  * struct listint_s - singly linked list
@@ -22,4 +22,4 @@ void free_listint(listint_t *head);
 
 int is_palindrome(listint_t **head);
 
-#endif /* LIST_H */
+#endif /* LISTS_H */

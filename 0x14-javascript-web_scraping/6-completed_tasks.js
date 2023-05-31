@@ -1,26 +1,16 @@
 #!/usr/bin/node
-// script that computes the number of tasks completed by user id.
-
 const request = require('request');
-const API = process.argv[2];
-
-if (process.argv.length !== 3) {
-  console.log('Usage: ./6-completed_tasks.js <api>');
-} else {
-  request(API, (err, response, body) => {
-    if (err) throw err;
-    const res = JSON.parse(body);
-
-    const compl = {};
-    // console.log(res.length)
-    for (let i = 0; i < res.length; i++) {
-      if (res[i].completed === true) {
-        if (compl[res[i].userId] === undefined) {
-          compl[res[i].userId] = 0;
-        }
-        compl[res[i].userId]++;
+request(process.argv[2], function (err, resp, body) {
+  if (!err) {
+    const data = JSON.parse(body);
+    const completedUsers = {};
+    data.forEach((element) => {
+      if (element.completed && completedUsers[element.userId] === undefined) {
+        completedUsers[element.userId] = 1;
+      } else if (element.completed) {
+        completedUsers[element.userId] += 1;
       }
-    }
-    console.log(compl);
-  });
-}
+    });
+    console.log(completedUsers);
+  }
+});

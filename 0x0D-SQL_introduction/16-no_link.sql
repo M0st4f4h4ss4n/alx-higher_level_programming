@@ -1,5 +1,5 @@
--- Lists all records of the table second_table having a name value.
--- Records are ordered by descending score.
+-- List and order all records in the second_table that
+-- Dont have a blank name
 SELECT `score`, `name`
 FROM `second_table`
 WHERE `name` != ""

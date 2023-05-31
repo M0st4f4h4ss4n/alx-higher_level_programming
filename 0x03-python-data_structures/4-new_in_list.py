@@ -1,12 +1,8 @@
 #!/usr/bin/python3
 def new_in_list(my_list, idx, element):
-    """replaces an element tn a list at a
-    specific position withoit modifying the
-    original list.
-    """
-    if (idx < 0 or idx > (len(my_list) - 1)):
+    """Return new list with item at position idx set to elelement"""
+    if idx < 0 or idx > (len(my_list) - 1):
         return my_list
-    else:
-        new = [num for num in my_list]
-        new[idx] = element
-        return(new)
+    new_list = [item for item in my_list]
+    new_list[idx] = element
+    return new_list

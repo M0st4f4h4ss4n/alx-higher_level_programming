@@ -1,5 +1,6 @@
-$('document').ready(function () {
-    $.get('https://fourtonfish.com/hellosalut/?lang=fr', function (data) {
-      $('DIV#hello').text(data.hello);
+$(document).ready(function () {
+    $.get('https://hellosalut.stefanbohacek.dev/?lang=fr', (response, statusCode) => {
+        // console.log(response)
+        $('#hello').text(response['hello']);
     });
 });

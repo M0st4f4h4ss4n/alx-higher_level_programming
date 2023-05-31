@@ -1,29 +1,33 @@
 #!/usr/bin/python3
-"""
-Student module
-"""
+
+"""Student class to represent a student"""
 
 
 class Student:
-    """defines a student"""
-
+    """Defining student class """
     def __init__(self, first_name, last_name, age):
-        """constructor"""
+        """Student constructor
+        Args:
+            first_name(str)
+            last_name(str)
+            age(str)
+        """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """retrieves a dictionary representation of a Student instance"""
-        attrs_dict = {}
-        if type(attrs) is list and all(type(x) is str for x in attrs):
-            for attr in attrs:
-                if attr in self.__dict__:
-                    attrs_dict.update({attr: self.__dict__[attr]})
-            return attrs_dict
+        """ Retrive information about an instance to json
+        Args:
+            attrs(list) -> List of attribute to be retrieved
+        """
+        if (type(attrs) == list and
+                all(type(element) == str for element in attrs)):
+            return {key: getattr(self, key)
+                    for key in attrs if hasattr(self, key)}
         return self.__dict__
 
     def reload_from_json(self, json):
-        """replaces all attributes of the Student instance"""
-        for attr in json:
-            self.__dict__.update({attr: json[attr]})
+        """Replace attributes of the object with k-v pair in the json """
+        for key, value in json.items():
+            setattr(self, key, value)

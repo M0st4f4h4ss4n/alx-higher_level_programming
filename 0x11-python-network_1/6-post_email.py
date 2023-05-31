@@ -1,21 +1,25 @@
 #!/usr/bin/python3
-"""Sends a POST request to a given URL with a given email.
+"""send an email to the url and print the response"""
 
-Usage:
-    ./6-post_email.py <url> <email>
-"""
-import sys
-import requests
+from requests import post
+from sys import argv
+
+
+def send_email_to_url(url: str, email: str) -> str:
+    """
+    Send a request to the URL specified and
+    get the response
+    Args:
+        url (str): The URL to send to
+        email (str): the email addr
+    """
+    data = {}
+    data['email'] = email
+    try:
+        return (post(url, data=data).text)
+    except Exception as e:
+        return e
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: ./6-post_email.py <url> <email>")
-    else:
-        URL = sys.argv[1]
-
-        value = {
-                    "email": sys.argv[2]
-                }
-        r = requests.post(URL, data=value)
-        print(r.text)
+    print(send_email_to_url(argv[1], argv[2]))

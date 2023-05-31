@@ -1,11 +1,19 @@
 #!/usr/bin/python3
-"""Contains a function that appends to text file and
-returns the number of characters added
-"""
+
+""" Function to append to a file"""
 
 
 def append_write(filename="", text=""):
-    """appends a string at the end of a text file
+    """Append <text> to <filename>
+    Args:
+        filename(str) -> Name of the file to append to
+        text(str)     -> Content to append
+    Returns:
+        Number of characters written
     """
-    with open(filename, mode="a", encoding="utf-8") as f:
-        return(f.write(text))
+    if filename:
+        with open(filename, "a", encoding="utf-8") as f:
+            pre_content = f.tell()
+            f.write(text)
+            post_content = f.tell()
+            return post_content - pre_content

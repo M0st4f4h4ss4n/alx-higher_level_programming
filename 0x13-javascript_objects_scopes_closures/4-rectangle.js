@@ -1,44 +1,28 @@
 #!/usr/bin/node
-/**
- * class Rectangle - defines a rectangle.
- */
-class Rectangle {
+
+module.exports = class Rectangle {
   constructor (w, h) {
-    if (w > 0 && h > 0) {
-      this.width = w;
-      this.height = h;
+    if ((w > 0) && (h > 0)) {
+      [this.width, this.height] = [w, h];
     }
   }
 
-  // Instance method that prints the rectangles using the character 'X'
   print () {
-    let x = 0;
-    let y = 0;
-    let output = '';
-
-    while (x < this.height) {
-      while (y < this.width) {
-        output += 'X';
-        y++;
-      }
-      console.log(output);
-      x++;
+    let sizeY = this.height;
+    while (sizeY > 0) {
+      console.log('X'.repeat(this.width));
+      sizeY -= 1;
     }
   }
 
-  /**
-   * Instance method that exchanges the width and the geight of the rectangle
-   */
   rotate () {
-    [this.width, this.height] = [this.height, this.width];
+    const tempHeight = this.height;
+    this.height = this.width;
+    this.width = tempHeight;
   }
 
-  /**
-   * Instance method that multiplies the width and the height of the rectangle by 2
-   */
   double () {
-    [this.width, this.height] = [2 * this.width, 2 * this.height];
+    [this.width, this.height] = [this.width, this.height]
+      .map(prop => prop * 2);
   }
-}
-
-module.exports = Rectangle;
+};
