@@ -1,64 +1,97 @@
-🚀 ALX-Holberton Programming Assignments 🚀
-Welcome to my repository for ALX-Holberton assignments. This repo is a collection of high-level programming projects I've been working on during my training. Here, you'll find projects in Python, JavaScript, and C.
-
-👨‍💻 Programming Languages Used 👨‍💻
-Python 🐍: 87.4%
-JavaScript ☕: 6.3%
-C 🖥️: 5.0%
-📂 Projects 📂
-🎉 Hello World in Python 🎉
-
-Getting started with Python. Basic print commands and hello world.
-🔀 Python If, Else, Loops, and Functions 🔀
-
-Delving into control flow and functions in Python.
-📦 Python Import Modules 📦
-
-Understanding how to use and create Python modules.
-📚 Python Data Structures 📚
-
-Exploring lists, tuples, dictionaries, and more.
-📈 More Python Data Structures 📈
-
-Further exploration of Python's versatile data structures.
-❗ Python Exceptions ❗
-
-Handling errors and exceptions in Python.
-👥 Python Classes 👥
-
-Introduction to Object-Oriented Programming in Python.
-🧪 Test-Driven Development in Python 🧪
-
-Learning to develop using tests first.
-👥 More Python Classes 👥
-
-Further exploration of classes and objects in Python.
-🔄 Everything is Object in Python 🔄
-
-Understanding the object-oriented nature of Python.
-👶 Python Inheritance 👶
-Diving into class inheritance in Python.
-⬅️➡️ Python Input/Output ⬅️➡️
-Working with user input and file output in Python.
-⭕ Almost a Circle in Python ⭕
-A complex project involving several Python concepts.
-📊 SQL Introduction 📊
-Getting started with SQL and databases.
-📚 More SQL Queries 📚
-Deeper dive into SQL and database querying.
-🗺️ Object-Relational Mapping in Python 🗺️
-Bridging the gap between Python and databases.
-🌐 Python Network Programming 🌐
-Understanding how Python can interact with the network.
-🔥 JavaScript Warm-Up 🔥
-Getting started with JavaScript basics.
-📦 JavaScript Objects, Scopes, and Closures 📦
-Exploring more advanced JavaScript concepts.
-🕷️ Web Scraping in JavaScript 🕷️
-Learning to extract data from web pages with JavaScript.
-🌐 Web jQuery in JavaScript 🌐
-Using jQuery to enhance web interactivity.
-📅 Latest Update 📅
-The latest commit was on April 20, 2022, for the "Web jQuery in JavaScript" project.
-
-I hope you find this repository interesting and informative! 🎈
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ALX-Holberton Programming Assignments</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 48px;
+            text-align: center;
+            color: #00bfff;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 24px;
+            color: #ff6347;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        ul, ol {
+            margin-left: 30px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .center {
+            text-align: center;
+        }
+        .code {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 ALX-Holberton Programming Assignments 🚀</h1>
+    <p>Welcome to my repository for ALX-Holberton assignments. This repo is a collection of high-level programming projects I've been working on during my training. Here, you'll find projects in Python, JavaScript, and C.</p>
+    <h2>👨‍💻 Programming Languages Used 👨‍💻</h2>
+    <ul>
+        <li>Python 🐍: 87.4%</li>
+        <li>JavaScript ☕: 6.3%</li>
+        <li>C 🖥️: 5.0%</li>
+    </ul>
+    <h2>📂 Projects 📂</h2>
+    <ol>
+        <li>🎉 <strong>Hello World in Python</strong> 🎉</li>
+        <li>🔀 <strong>Python If, Else, Loops, and Functions</strong> 🔀</li>
+        <li>📦 <strong>Python Import Modules</strong> 📦</li>
+        <li>📚 <strong>Python Data Structures</strong> 📚</li>
+        <li>📈 <strong>More Python Data Structures</strong> 📈</li>
+        <li>❗ <strong>Python Exceptions</strong> ❗</li>
+        <li>👥 <strong>Python Classes</strong> 👥</li>
+        <li>🧪 <strong>Test-Driven Development in Python</strong> 🧪</li>
+        <li>👥 <strong>More Python Classes</strong> 👥</li>
+        <li>🔄 <strong>Everything is Object in Python</strong> 🔄</li>
+        <li>👶 <strong>Python Inheritance</strong> 👶</li>
+        <li>⬅️➡️ <strong>Python Input/Output</strong> ⬅️➡️</li>
+        <li>⭕ <strong>Almost a Circle in Python</strong> ⭕</li>
+        <li>📊 <strong>SQL Introduction</strong> 📊</li>
+        <li>📚 <strong>More SQL Queries</strong> 📚</li>
+        <li>🗺️ <strong>Object-Relational Mapping in Python</strong> 🗺️</li>
+        <li>🌐 <strong>Python Network Programming</strong> 🌐</li>
+        <li>🔥 <strong>JavaScript Warm-Up</strong> 🔥</li>
+        <li>📦 <strong>JavaScript Objects, Scopes, and Closures</strong> 📦</li>
+        <li>🕷️ <strong>Web Scraping in JavaScript</strong> 🕷️</li>
+        <li>🌐 <strong>Web jQuery in JavaScript</strong> 🌐</li>
+    </ol>
+    <h2>📅 Latest Update 📅</h2>
+    <p>The latest commit was on April 20, 2022, for the "Web jQuery in JavaScript" project.</p>
+    <p class="center">I hope you find this repository interesting and informative<br>Happy Coding! 😊</p>
+    <div class="code">
+        <p>Metadata about the current git repository:</p>
+        <ul>
+            <li>Current Branch name: main</li>
+            <li>Upstream: origin/main</li>
+            <li>GitHub handle of the current user: M0st4f4h4ss4n</li>
+            <li>Remotes: origin</li>
+        </ul>
+    </div>
+</body>
+</html>
